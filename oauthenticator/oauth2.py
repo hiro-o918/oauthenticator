@@ -837,7 +837,7 @@ class OAuthenticator(Authenticator):
             self.token_url,
             method="POST",
             headers=self.build_token_info_request_headers(),
-            body=urlencode(params).encode("utf-8"),
+            body=json.dumps(params),
             validate_cert=self.validate_server_cert,
         )
 
